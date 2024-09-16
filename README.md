@@ -4,7 +4,7 @@
 
 Welcome! This repository contains a notebook that demonstrates how to detect anomalies in time-series data from a **compressor system** using **Autoencoders** with **PyTorch**. The Autoencoder is trained on **normal operational data**, and when it encounters **anomalous data**, it produces a large **reconstruction error**, which helps to identify the anomalies.
 
-<img src="resources/compressor_image.png" alt="Industrial Compressor" width="500" />
+<img src="resources/compressor.png" alt="Industrial Compressor" width="500" />
 *Figure 1: An AI-generated image of an industrial compressor created using DALL·E by OpenAI. This image is intended to visually represent the compressor system discussed in the anomaly detection project.*
 
 The Autoencoder is a neural network that tries to learn how to compress (encode) and then reconstruct (decode) the input data. Since it is trained only on normal data, it becomes good at reconstructing **normal behavior** but struggles with data that deviates from the normal patterns, such as faulty or anomalous data.
