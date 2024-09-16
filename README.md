@@ -4,7 +4,7 @@
 
 Welcome! This repository contains a notebook that demonstrates how to detect anomalies in time-series data from a **compressor system** using **Autoencoders** with **PyTorch**. The Autoencoder is trained on **normal operational data**, and when it encounters **anomalous data**, it produces a large **reconstruction error**, which helps to identify the anomalies.
 
-![Compressor Image](resources/compressor.png)
+<img src="resources/compressor_image.png" alt="Industrial Compressor" width="500" />
 *Figure 1: An AI-generated image of an industrial compressor created using DALL·E by OpenAI. This image is intended to visually represent the compressor system discussed in the anomaly detection project.*
 
 The Autoencoder is a neural network that tries to learn how to compress (encode) and then reconstruct (decode) the input data. Since it is trained only on normal data, it becomes good at reconstructing **normal behavior** but struggles with data that deviates from the normal patterns, such as faulty or anomalous data.
@@ -37,16 +37,14 @@ The required libraries include common data science and machine learning tools su
    - The **Autoencoder** is designed to learn the normal behavior of the system by compressing and reconstructing the data. When trained on normal data, the autoencoder minimizes the reconstruction error for normal inputs.
    - **Hypothesis**: When the autoencoder encounters **anomalous data**, it will produce a **large reconstruction error** because it has not learned the patterns of the anomalies. This large reconstruction error helps identify the anomalies in the system.
    
-   The reconstruction error is calculated as the difference between the input data \( X \) and the reconstructed output \( \hat{X} \):
+   The reconstruction error is calculated as the difference between the input data $X$ and the reconstructed output $\hat{X}$:
 
-   ```latex
-   \text{Reconstruction Error} = \frac{1}{n} \sum_{i=1}^{n} (X_i - \hat{X_i})^2
-   ```
+   $$\text{Reconstruction Error} = \frac{1}{n} \sum_{i=1}^{n} (X_i - \hat{X_i})^2$$
 
    Where:
-   - \( X \) is the original input.
-   - \( \hat{X} \) is the reconstructed output from the autoencoder.
-   - \( n \) is the number of features (e.g., temperature, pressure, vibration).
+   - $X$ is the original input.
+   - $\hat{X}$ is the reconstructed output from the autoencoder.
+   - $n$ is the number of features (e.g., temperature, pressure, vibration).
 
 3. **Model Training**:
    - The **Autoencoder** is built using **PyTorch** and trained using only **normal data**.
